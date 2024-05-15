@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reclamos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/carrito.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="inicio.html"> 
+            Cine Mark 
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="inicio.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="movie.html">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Cerrar Sesion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Formulario de Reclamos</h1>
+    </header>
+    <main>
+        <section id="formulario">
+            <h2>Realiza tu reclamo</h2>
+            <form action="procesar_reclamo.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="tipo_reclamo">Tipo de reclamo:</label>
+                <select id="tipo_reclamo" name="tipo_reclamo" required>
+                    <option value="producto">Producto</option>
+                    <option value="servicio">Servicio</option>
+                    <option value="atencion">Atención al cliente</option>
+                </select><br>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Contacto: contacto@PelículasAlquiler.com | Teléfono: 123-456-789</p>
+    </footer>
+</body>
+</html>

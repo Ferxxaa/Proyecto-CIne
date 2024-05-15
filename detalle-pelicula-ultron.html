@@ -5,29 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/movie-1.css">
     <title>Detalles de la Película</title>
-    
-    
-    
-    
 </head>
 <body>
-    
-
     <div class="container">
         <div class="movie-details">
             <div class="movie-details__image">
-                <img src="assets/img/new-4.png" alt="Toy Story">
+                <img src="assets/img/movie-6.png" alt="Avengers: Age of Ultron">
             </div>
             <div class="movie-details__info">
-                <h2 class="movie-details__title">Toy story</h2>
+                <h2 class="movie-details__title">Avengers: Age of Ultron</h2>
                 <ul class="movie-details__list">
                     <li><strong>Resumen:</strong> 
-                        "Toy Story: " Woody, el juguete favorito de Andy, se siente amenazado por la inesperada llegada de Buzz Lightyear, el guardián del espacio.
+                        "Avenger Age of Ultron: " Los Vengadores se reúnen de nuevo y juntan sus fuerzas con las de los recién llegados Quicksilver y Bruja Escarlata para luchar contra un robot maquiavélico llamado Ultrón, el cual Tony Stark creó con el fin de defender la paz, pero resultó defectuoso y ahora pretende exterminar a toda la humanidad.
                     </li>
-                    <li><strong>Detalle:</strong> Infantil, Aventura</li>
-                    <li><strong>Fecha de Estreno:</strong> 4 de enero de 1996</li>
-                    <li><strong>Duración:</strong> 70 minutos</li>
-                    <li><strong>Precio:</strong> $14.000 CLP</li>
+                    <li><strong>Detalle:</strong> Acción, Aventura</li>
+                    <li><strong>Fecha de Estreno:</strong> 30 de abril de 2015</li>
+                    <li><strong>Duración:</strong> 143 minutos</li>
+                    <li><strong>Actores:</strong> Robert Downey Jr., Chris Evans, Scarlett Johansson</li>
+                    <li><strong>Precio:</strong> $24.000 CLP</li>
                 </ul>
                 <button id="rent-button" class="rent-button">Arrendar Película</button>
             </div>
@@ -45,7 +40,7 @@
         // Redirigir a carrito.html al hacer clic en el botón "Arrendar Película"
         document.getElementById('rent-button').addEventListener('click', () => {
             const movieTitle = document.querySelector('.movie-details__title').textContent;
-            const moviePrice = 14000; // Precio fijo para esta película
+            const moviePrice = 24000; // Precio fijo para esta película
             addToCart(movieTitle, moviePrice);
             window.location.href = 'carrito.html';
         });

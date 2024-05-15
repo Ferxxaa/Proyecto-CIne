@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    
     
 
-    <title>MI CINE MARK FRUNA</title>
+    <title>MI CINE </title>
 </head>
 <body>
    
@@ -17,7 +24,7 @@
     <!--==================== NAV ====================-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="inicio.html"> 
-            Cine Mark Fruna
+            Cuevanita 
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,39 +36,49 @@
                     <a class="nav-link" href="inicio.html">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Movies</a>
+                    <a class="nav-link" href="movie.html">Movies</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html">Compras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Series</a>
+                    <a class="nav-link" href="reclamos.html">Contactanos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Cerrar Sesion</a>
+                </li>
+                
             </ul>
         </div>
     </nav>
         <!--==================== BANNER ====================-->
         <section class="banner">
-            <a href="detalle-pelicula.html"></a>
-            <article class="banner__card">
-                <a href="detalle-pelicula.html" class="banner__link">
-                    <img src="assets/img/banner.png" alt="image" class="banner__img">
-                    <div class="banner__shadow"></div>
+            <div class="slick-carousel">
+                    
+                    <img src="assets/img/banner.png "  alt="image" class="banner__img"> 
+                    <img src="assets/img/walle.jpg" alt="image" class="banner_img">
+                    <img src="assets/img/niña.jpg" alt="image" class="banner_img">   
 
-                    <div class="banner__data">
-                        <h2 class="banner__title">Avengers</h2>
-                        <span class="banner__category">Action</span>
-                    </div>
-                </a>
-            </article>
+                    <div class="banner__shadow"></div>
+                    
+                </div>
+            </div>
+            
         </section>
 
         <!--==================== MOVIES ====================-->
+        
         <section class="movie">
-            <h3 class="card__title">Movies</h3>
+            <h3 class="card__title">Top De Mejores Peliculas!</h3>
+            
 
            <div class="movie__swiper swiper">
                <div class="swiper-wrapper movie__wrapper">
+               
                    <!-- Películas aquí -->
                    <article class="card__article swiper-slide">
-                       <a href="#" class="card__link">
+                       <a href="detalle-pelicula.html" class="card__link">
                            <img src="assets/img/movie-1.png" alt="image" class="card__img">
                            <div class="card__shadow"></div>
            
@@ -75,13 +92,13 @@
                    </article>
            
                    <article class="card__article swiper-slide">
-                       <a href="#" class="card__link">
+                       <a href="detalle-pelicula.inter.html" class="card__link">
                            <img src="assets/img/movie-2.png" alt="image" class="card__img">
                            <div class="card__shadow"></div>
            
                            <div class="card__data">
-                               <h3 class="card__name">Movie 2</h3>
-                               <span class="card__category">Genre 2</span>
+                               <h3 class="card__name">Interstellar</h3>
+                               <span class="card__category"> Ciencia ficción/Aventura</span>
                            </div>
            
                            <i class="ri-heart-3-line card__like"></i>
@@ -89,13 +106,13 @@
                    </article>
 
                    <article class="card__article swiper-slide">
-                     <a href="#" class="card__link">
+                     <a href="detalle-pelicula-dune.html" class="card__link">
                          <img src="assets/img/movie-3.png" alt="image" class="card__img">
                          <div class="card__shadow"></div>
          
                          <div class="card__data">
-                             <h3 class="card__name">Movie 2</h3>
-                             <span class="card__category">Genre 2</span>
+                             <h3 class="card__name">Dune </h3>
+                             <span class="card__category">Ciencia Ficcion</span>
                          </div>
          
                          <i class="ri-heart-3-line card__like"></i>
@@ -117,13 +134,13 @@
               </article>
 
               <article class="card__article swiper-slide">
-               <a href="#" class="card__link">
+               <a href="detalle-peliculaBatman.html" class="card__link">
                    <img src="assets/img/movie-5.png" alt="image" class="card__img">
                    <div class="card__shadow"></div>
    
                    <div class="card__data">
-                       <h3 class="card__name">Movie 2</h3>
-                       <span class="card__category">Genre 2</span>
+                       <h3 class="card__name">Batman</h3>
+                       <span class="card__category"> Accion</span>
                    </div>
    
                    <i class="ri-heart-3-line card__like"></i>
@@ -131,13 +148,52 @@
            </article>
 
            <article class="card__article swiper-slide">
-            <a href="#" class="card__link">
+            <a href="detalle-pelicula-ultron.html" class="card__link">
                 <img src="assets/img/movie-6.png" alt="image" class="card__img">
                 <div class="card__shadow"></div>
 
                 <div class="card__data">
-                    <h3 class="card__name">Movie 2</h3>
-                    <span class="card__category">Genre 2</span>
+                    <h3 class="card__name">Avengers: Age of Ultron</h3>
+                    <span class="card__category">Acción/Ciencia ficción</span>
+                </div>
+
+                <i class="ri-heart-3-line card__like"></i>
+            </a>
+        </article>
+        <article class="card__article swiper-slide">
+            <a href="detalle-pelicula-origen.html" class="card__link">
+                <img src="assets/img/movie-4.png" alt="image" class="card__img">
+                <div class="card__shadow"></div>
+
+                <div class="card__data">
+                    <h3 class="card__name">El origen </h3>
+                    <span class="card__category">Ciencia Ficcion/Accion</span>
+                </div>
+
+                <i class="ri-heart-3-line card__like"></i>
+            </a>
+        </article>
+        <article class="card__article swiper-slide">
+            <a href="detalle-pelicula.spider.html" class="card__link">
+                <img src="assets/img/new-2.png" alt="image" class="card__img">
+                <div class="card__shadow"></div>
+
+                <div class="card__data">
+                    <h3 class="card__name">Spiderman </h3>
+                    <span class="card__category">Ciencia Ficcion/Accion</span>
+                </div>
+
+                <i class="ri-heart-3-line card__like"></i>
+            </a>
+        </article>
+        <article class="card__article swiper-slide">
+            <a href="detalle-pelicula-X.html" class="card__link">
+                <img src="assets/img/new-6.png" alt="image" class="card__img">
+                <div class="card__shadow"></div>
+
+                <div class="card__data">
+                    <h3 class="card__name">X-Men: Apocalypse</h3>
+                    <span class="card__category"> Accion/Aventura</span>
                 </div>
 
                 <i class="ri-heart-3-line card__like"></i>
@@ -147,8 +203,28 @@
                    <!-- Agrega más películas aquí -->
                </div>
            </div>
+           
         </section>
     </main>
+    <script>
+        $(document).ready(function(){
+            $('.slick-carousel').slick({
+                autoplay: true, // Habilita la reproducción automática
+                autoplaySpeed: 3000, // Velocidad de reproducción automática en milisegundos
+                dots: true, // Muestra los puntos de navegación
+                arrows: true, // Muestra las flechas de navegación
+                prevArrow: '<button type="button" class="slick-prev">Previous</button>', // Personaliza el botón de flecha anterior
+                nextArrow: '<button type="button" class="slick-next">Next</button>', // Personaliza el botón de flecha siguiente
+                // Otras opciones de configuración según tus necesidades
+            });
+        });
+    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PelículasAlquiler.com - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    
 
 </body>
 </html>

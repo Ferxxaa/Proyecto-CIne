@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/movie-1.css">
     <title>Detalles de la Película</title>
-    
-    
-    
-    
 </head>
 <body>
-    
-
     <div class="container">
         <div class="movie-details">
             <div class="movie-details__image">
-                <img src="assets/img/new-4.png" alt="Toy Story">
+                <img src="assets/img/movie-4.png" alt="El origen">
             </div>
             <div class="movie-details__info">
-                <h2 class="movie-details__title">Toy story</h2>
+                <h2 class="movie-details__title">El origen</h2>
                 <ul class="movie-details__list">
                     <li><strong>Resumen:</strong> 
-                        "Toy Story: " Woody, el juguete favorito de Andy, se siente amenazado por la inesperada llegada de Buzz Lightyear, el guardián del espacio.
+                        "El origen: Dom Cobb es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarles los secretos de sus subconscientes. Su habilidad lo ha vuelto muy popular en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama. Cobb obtiene la oportunidad de redimirse cuando recibe una tarea imposible: plantar una idea en la mente de una persona. Si tiene éxito, será el crimen perfecto, pero un enemigo se anticipa a sus movimientos.
                     </li>
-                    <li><strong>Detalle:</strong> Infantil, Aventura</li>
-                    <li><strong>Fecha de Estreno:</strong> 4 de enero de 1996</li>
-                    <li><strong>Duración:</strong> 70 minutos</li>
-                    <li><strong>Precio:</strong> $14.000 CLP</li>
+                    <li><strong>Detalle:</strong> Acción,Ciencia Ficcion</li>
+                    <li><strong>Fecha de Estreno:</strong> 13 de julio de 2010</li>
+                    <li><strong>Duración:</strong> 	148 minutos</li>
+                    <li><strong>Actores:</strong> 	Leonardo DiCaprio,
+                        Ken Watanabe,
+                        Joseph Gordon-Levitt</li>
+                    <li><strong>Precio:</strong> $21.000 CLP</li>
                 </ul>
                 <button id="rent-button" class="rent-button">Arrendar Película</button>
             </div>
@@ -45,7 +42,7 @@
         // Redirigir a carrito.html al hacer clic en el botón "Arrendar Película"
         document.getElementById('rent-button').addEventListener('click', () => {
             const movieTitle = document.querySelector('.movie-details__title').textContent;
-            const moviePrice = 14000; // Precio fijo para esta película
+            const moviePrice = 21000; // Precio fijo para esta película
             addToCart(movieTitle, moviePrice);
             window.location.href = 'carrito.html';
         });

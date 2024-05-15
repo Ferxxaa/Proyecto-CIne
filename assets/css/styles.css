@@ -81,6 +81,7 @@ body {
 }
 
 /*=============== CARDS ===============*/
+
 .card__title {
   font-size: var(--h3-font-size);
   margin-bottom: .75rem;
@@ -88,6 +89,7 @@ body {
 
 .card__article {
   width: 152px;
+  height: auto;
 }
 
 .card__link {

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <style>
+        /* Estilos para las movie cards */
+.movie-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Grid con 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.movie-card {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.movie-card img {
+    width: 100%;
+    height: 500px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Ajustar la imagen al tamaño del contenedor manteniendo la relación de aspecto */
+    border-radius: 8px; /* Borde redondeado para las imágenes */
+    border: 2px solid #fff; /* Borde blanco alrededor de las imágenes */
+}
+
+        /* Estilos CSS adicionales aquí */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .carousel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .movie-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .movie-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .movie-card h3 {
+            margin-bottom: 10px;
+        }
+        .movie-card p {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        .movie-card h3 {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    color: #fff; /* Texto en color blanco */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    font-family: 'Arial', sans-serif; /* Fuente del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el texto */
+}
+.movie-card {
+    position: relative; /* Posición relativa para alinear el marco */
+    overflow: hidden; /* Ocultar elementos que se desbordan del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+.movie-card::before {
+    content: ""; /* Contenido generado antes del elemento */
+    position: absolute; /* Posición absoluta para el marco */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Gradiente para el marco */
+    z-index: 1; /* Colocar el marco detrás del contenido */
+}
+
+.movie-card h3,
+.movie-card p {
+    position: relative; /* Posición relativa para mantener el orden z */
+    z-index: 2; /* Colocar el texto delante del marco */
+    color: #fff; /* Texto en color blanco */
+}
+
+.movie-card h3 {
+    font-size: 1.5rem; /* Tamaño de fuente para el título */
+    margin-bottom: 5px; /* Espacio inferior entre el título y la descripción */
+}
+
+.movie-card p {
+    font-size: 1rem; /* Tamaño de fuente para la descripción */
+}
+body {
+    background-color: #1f1f1f; /* Color de fondo oscuro como en las películas */
+    color: #fff; /* Color de letra blanco para resaltar sobre el fondo oscuro */
+    font-family: 'Arial', sans-serif; /* Fuente predeterminada para el texto */
+}
+
+/* Estilos para el texto y el contenedor de las movie cards */
+.movie-card {
+    position: relative; /* Posición relativa para alinear el marco */
+    overflow: hidden; /* Ocultar elementos que se desbordan del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+.movie-card::before {
+    content: ""; /* Contenido generado antes del elemento */
+    position: absolute; /* Posición absoluta para el marco */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Gradiente para el marco */
+    z-index: 1; /* Colocar el marco detrás del contenido */
+}
+
+.movie-card h3,
+.movie-card p {
+    position: relative; /* Posición relativa para mantener el orden z */
+    z-index: 2; /* Colocar el texto delante del marco */
+}
+
+.movie-card h3 {
+    font-size: 1.5rem; /* Tamaño de fuente para el título */
+    margin-bottom: 5px; /* Espacio inferior entre el título y la descripción */
+}
+
+.movie-card p {
+    font-size: 1rem; /* Tamaño de fuente para la descripción */
+}
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="inicio.html"> 
+            Cuevanita 
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="inicio.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="movie.html">Movies</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="carrito.html">Compras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reclamos.html">Contactanos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Cerrar Sesion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>Películas Populares</h1>
+        <div class="movie-cards">
+            <!-- Ejemplo de tarjeta de película con imagen -->
+            <div class="movie-card">
+                <a href="https://www.pelicula1.com">
+                <img src="https://es.digitaltrends.com/wp-content/uploads/2023/12/image001-1-1.jpg?fit=486%2C720&p=1" alt="file:///C:/Users/gonza/OneDrive/Escritorio/prueba%202/carrito.html">
+            </a>
+                <h3>Madame Web</h3>
+                <p>Una paramédica de Manhattan que se ve obligada a enfrentarse a revelaciones sobre su pasado forja una relación con tres jóvenes destinadas a tener un futuro poderoso, si consiguen sobrevivir a un presente mortal.</p>
+                <p>Fecha de estreno: 14 de febrero de 2024</p>
+                
+                
+
+            </div>
+            <!-- Otras tarjetas de películas populares -->
+            <div class="movie-card">
+                <a href="https://www.Película 1.com">
+                <img src="https://i.pinimg.com/474x/6a/84/a6/6a84a6dbc955989cde1785c0e577e831.jpg" alt="file:///C:/Users/gonza/OneDrive/Escritorio/prueba%202/carrito.html">
+            </a>
+                <h3>La Monja</h3>
+                <p>Una monja se suicida en una abadía rumana y el Vaticano envía a un sacerdote y una novicia a investigar lo sucedido. Lo que ambos encuentran allá es un secreto perverso que los enfrentará cara a cara con el mal en su esencia más pura.</p>
+                <p>Fecha de estreno: 7 de septiembre de 2018</p>
+                
+                
+            </div>
+            <div class="movie-card">
+                <a href="https://www.pelicula3.com">
+                <img src="https://es.web.img3.acsta.net/pictures/23/01/23/16/41/0617610.jpg" alt="file:///C:/Users/gonza/OneDrive/Escritorio/prueba%202/carrito.html">
+            </a>
+                <h3>Posesion Infernal</h3>
+                <p>En una remota cabaña en el bosque, cinco amigos descubren un Libro de la Muerte y sin querer convocan a un demonio antiguo. Las entidades malévolas poseen a cada una de las personas, hasta que sólo uno queda intacto para sobrevivir.</p>
+                <p>Fecha de estreno: 18 de abril de 2013</p>
+                
+                
+            </div>
+            <div class="movie-card">
+                <a href="https://www.pelicula4.com">
+                <img src="https://es.web.img3.acsta.net/pictures/24/02/12/14/09/5012504.jpg" alt="file:///C:/Users/gonza/OneDrive/Escritorio/prueba%202/carrito.html">
+            </a>
+                <h3>El Reino Del Planeta De Los Simios</h3>
+                <p>Mientras un nuevo y tiránico líder simio construye su imperio, un joven primate emprende un angustioso viaje que le llevará a cuestionarse todo lo que sabe sobre el pasado y a tomar decisiones que definirán el futuro de simios y humanos por igual.</p>
+                <p>Fecha de estreno: 9 de abril de 2024</p>
+                
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PelículasAlquiler.com - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
