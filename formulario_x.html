@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Reclamos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/carrito.css">
-</head>
-<body>
     <style>
+        /* Estilos CSS para mantener el formato */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -77,28 +75,28 @@
             background-color: #f44336;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="inicio.html"> 
-            Cuevanita 
-        </a>
+        <a class="navbar-brand" href="inicio.html">Cuevanita</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     
-        <div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="inicio.html">inicio</a>
+                    <a class="nav-link" href="inicio.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="movie.html">Peliculas</a>
                 </li>
-                
                 <li class="nav-item">
                     <a class="nav-link" href="carrito.html">Compras</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="reclamos.html">Contactanos</a>
+                    <a class="nav-link" href="formulario_x.html">Contactanos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">Cerrar Sesion</a>
@@ -113,25 +111,53 @@
     <main>
         <section id="formulario">
             <h2>Realiza tu reclamo</h2>
-            <form action="procesar_reclamo.php" method="POST">
+            <form id="reclamoForm" action="procesar_reclamo.php" method="POST">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required><br>
+                
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required><br>
+                
                 <label for="tipo_reclamo">Tipo de reclamo:</label>
                 <select id="tipo_reclamo" name="tipo_reclamo" required>
                     <option value="producto">Producto</option>
                     <option value="servicio">Servicio</option>
                     <option value="atencion">Atención al cliente</option>
                 </select><br>
+                
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" required><br>
+                
                 <label for="mensaje">Mensaje:</label><br>
                 <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br>
-                <input type="submit" value="Enviar">
+                
+                <button type="button" id="enviarBtn">Enviar</button>
             </form>
         </section>
     </main>
+
     <footer>
         <p>  Contacto: contacto@PelículasAlquiler.com | Teléfono: 123-456-789</p>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#enviarBtn').on('click', function() {
+                $.ajax({
+                    url: $('#reclamoForm').attr('action'),
+                    type: 'POST',
+                    data: $('#reclamoForm').serialize(),
+                    success: function(response) {
+                        alert('Formulario enviado correctamente');
+                        // Aquí puedes realizar más acciones si es necesario
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error al enviar el formulario');
+                        // Aquí puedes manejar errores de envío
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
